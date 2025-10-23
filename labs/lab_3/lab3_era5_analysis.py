@@ -20,7 +20,7 @@ def load_and_explore_data(filepath, city_name):
     """Loads a dataset, performs basic exploration, and initial cleaning."""
     print(f"\n--- 1. Data Loading and Exploration: {city_name} ---")
 
-    
+    # 🟢 MODIFICATION: Set the column name expected from the CSV to all-lowercase 'timestamp'
     TIME_COLUMN_NAME = 'timestamp'
 
     try:
@@ -29,12 +29,10 @@ def load_and_explore_data(filepath, city_name):
 
     except FileNotFoundError:
         print(f"⚠️ ERROR: File not found at {filepath}. Generating synthetic data instead.")
-        data = generate_mock_data(city_name)
-        TIME_COLUMN_NAME = 'time'  # Revert to 'time' if using mock data
+
     except Exception as e:
         print(f"An error occurred loading the file: {e}. Using synthetic data.")
-        data = generate_mock_data(city_name)
-        TIME_COLUMN_NAME = 'time'  # Revert to 'time' if using mock data
+
 
     print(f"Shape: {data.shape}")
     print("\nData Types:")
