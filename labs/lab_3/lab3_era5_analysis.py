@@ -20,7 +20,7 @@ def load_and_explore_data(filepath, city_name):
     """Loads a dataset, performs basic exploration, and initial cleaning."""
     print(f"\n--- 1. Data Loading and Exploration: {city_name} ---")
 
-    # 🟢 MODIFICATION: Set the column name expected from the CSV to all-lowercase 'timestamp'
+    
     TIME_COLUMN_NAME = 'timestamp'
 
     try:
